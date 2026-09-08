@@ -1,16 +1,36 @@
-# islami_app
+# 🕌 Islami App
 
-A new Flutter project.
+[svg](https://github.com/OmarAhmed480/islamiapp#-islami-app)
 
-## Getting Started
+A beautiful **Flutter Islamic App** that provides useful Islamic content and features with a clean and interactive interface.
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+[svg](https://github.com/OmarAhmed480/islamiapp#-features)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 📖 Quran reading
+- 🔍 Quran search
+- 📜 Hadith
+- 📻 Islamic Radio
+- 📿 Sebha / Tasbeeh
+- 🕌 Prayer Times
+- 🤲 Azkar
+- 🔄 Recently viewed Surahs
+- 📱 Interactive and responsive UI
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Technologies
+
+[svg](https://github.com/OmarAhmed480/islamiapp#️-technologies)
+
+- 💙 Flutter
+- 🎯 Dart
+- 🎨 Material Design
+- 📦 Provider
+- 💾 SharedPreferences
+- 
+- 📱 Flutter ScreenUtil
+- 🎠 Carousel Slider
+
+## 🚀 Getting Started
+
+[svg](https://github.com/OmarAhmed480/islamiapp#-getting-started)
