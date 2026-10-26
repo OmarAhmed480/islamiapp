@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/%20provider/mostRecentProvider.dart';
+import 'package:islami_app/Ui/screen/home/tabs/quran/widget/mostRecentList.dart';
+import 'package:islami_app/Ui/screen/home/tabs/quran/widget/surahListWidget.dart';
 import 'package:provider/provider.dart';
 
 import 'package:islami_app/Ui/screen/home/tabs/quran/widget/costRecentCard.dart';
@@ -56,67 +58,23 @@ class _QuranTabState extends State<QuranTab> {
             SizedBox(height: 25.h),
             Text("Most Recently", style: AppStyle.bold16w),
             SizedBox(height: 15.h),
-            Visibility(
-              visible: mostRecentProvider.mostRecentlyList.isNotEmpty,
-              child: SizedBox(
-                height: 150.h,
-                child: ListView.builder(
-                  itemCount: mostRecentProvider.mostRecentlyList.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    final suraIndex =
-                        mostRecentProvider.mostRecentlyList[index];
-                    return MostRecentCard(
-                      title: QuranResources.englishQuranSurahs[suraIndex],
-                      arabicTitle: QuranResources.arabicQuranSuras[suraIndex],
-                      verses: "${QuranResources.ayaNumber[suraIndex]} Verses",
-                      image: AppAssets.imgMostRecent,
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          AppRoutes.quranDetailsRouteName,
-                          arguments: suraIndex,
-                        );
-                      },
-                    );
-                  },
-                ),
-              ),
+            MostRecentList(
+              mostRecentlyList: mostRecentProvider.mostRecentlyList,
             ),
             SizedBox(height: 8.h),
             Text("Suras List", style: AppStyle.bold16w),
             SizedBox(height: 15.h),
-            filterList.isEmpty
-                ? Center(
-                    child: Text("NO Sora Item", style: AppStyle.bold20Gold),
-                  )
-                : SizedBox(
-                    height: 360.h,
-                    child: ListView.builder(
-                      itemCount: filterList.length,
-                      itemBuilder: (context, index) {
-                        final suraIndex = filterList[index];
-                        return SurahItem(
-                          number: suraIndex,
-                          englishName:
-                              QuranResources.englishQuranSurahs[suraIndex],
-                          arabicName:
-                              QuranResources.arabicQuranSuras[suraIndex],
-                          verses: QuranResources.ayaNumber[suraIndex],
-                          onTap: () {
-                            mostRecentProvider.saveMostRecent(
-                              newSuraIndex: suraIndex,
-                            );
-                            Navigator.pushNamed(
-                              context,
-                              AppRoutes.quranDetailsRouteName,
-                              arguments: suraIndex,
-                            );
-                          },
-                        );
-                      },
-                    ),
-                  ),
+            SurahListWidget(
+              filterList: filterList,
+              onTap: (suraIndex) {
+                mostRecentProvider.saveMostRecent(newSuraIndex: suraIndex);
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.quranDetailsRouteName,
+                  arguments: suraIndex,
+                );
+              },
+            ),
           ],
         ),
       ),

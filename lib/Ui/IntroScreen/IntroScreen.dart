@@ -5,6 +5,7 @@ import 'package:islami_app/uitils/app_assets.dart';
 import 'package:islami_app/uitils/app_colors.dart';
 import 'package:islami_app/uitils/app_routes.dart';
 import 'package:islami_app/uitils/app_style.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -17,6 +18,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(BuildContext context) {
+    saveOnBoarDing();
     Navigator.pushReplacementNamed(context, AppRoutes.homeRouteName);
   }
 
@@ -82,7 +84,6 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       onDone: () => _onIntroEnd(context),
       // You can override onSkip callback
       showBackButton: true,
-      showSkipButton: true,
       back: Text(
         'Back',
         style: AppStyle.bold16w.copyWith(color: AppColors.gold),
@@ -95,10 +96,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
         'Finish',
         style: AppStyle.bold16w.copyWith(color: AppColors.gold),
       ),
-      skip:Text(
-        'skip',
-        style: AppStyle.bold16w.copyWith(color: AppColors.gold),
-      ) ,
+
       curve: Curves.easeInOut,
       controlsPadding: REdgeInsets.symmetric(vertical: 50),
       dotsDecorator: DotsDecorator(
@@ -112,4 +110,10 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       ),
     );
   }
+Future<void>  saveOnBoarDing()async {
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setBool('onBoarDing', true);
+
+}
+
 }
