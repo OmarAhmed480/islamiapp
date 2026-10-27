@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:islami_app/models/prayer_model/Gregorian.dart';
 import 'package:islami_app/models/prayer_model/Hijri.dart';
-import 'package:islami_app/notification_service/notification_service.dart';
 
 class DateFormatter {
   static String fromGregorianDate(Gregorian gregorianDate) {

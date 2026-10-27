@@ -4,7 +4,6 @@ import 'package:islami_app/%20provider/mostRecentProvider.dart';
 import 'package:islami_app/Ui/screen/home/tabs/quran/quranDetails%20.dart';
 import 'package:islami_app/notification_service/notification_service.dart';
 import 'package:provider/provider.dart';
-
 import 'package:islami_app/Ui/IntroScreen/IntroScreen.dart';
 import 'package:islami_app/Ui/screen/home/homescreen.dart';
 import 'package:islami_app/Ui/screen/home/tabs/quran/quranDetails2.dart';

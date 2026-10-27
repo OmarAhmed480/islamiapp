@@ -12,6 +12,7 @@ import 'package:islami_app/api/dio_manager.dart';
 import 'package:islami_app/function/function.dart';
 import 'package:islami_app/models/prayer_model/prayer_data_model.dart';
 import 'package:islami_app/notification_service/notification_service.dart';
+import 'package:islami_app/notification_service/notification_test_buttons.dart';
 import 'package:islami_app/uitils/app_assets.dart';
 import 'package:islami_app/uitils/app_style.dart';
 
@@ -259,7 +260,7 @@ class _TimeTabState extends State<TimeTab> with WidgetsBindingObserver {
                 );
               },
             ),
-
+            NotificationTestButtons(),
             SizedBox(height: 10.h),
 
             Text('Azkar', style: AppStyle.bold16w),
